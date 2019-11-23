@@ -1,0 +1,15 @@
+﻿@inject SignInManager<IdentityUser> signInManager;
+
+@{ 
+    ViewBag.Title = "SOCKS 5 Proxy Frontend";
+}
+
+<h1>SOCKS 5 Proxy Frontend</h1>
+
+<a asp-action="Register" asp-controller="Account">Register</a>
+<a asp-action="Login" asp-controller="Account">Login</a>
+
+@if (signInManager.IsSignedIn(User))
+{
+<a asp-action="SocksProxy">SocksProxy</a>
+}
